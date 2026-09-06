@@ -26,7 +26,14 @@ public class ItemPedido {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
+
     public Double valorTotal(){
         return quantidade*preco;
     }
+    @Override
+    public String toString(){
+        return produto.getNome() +", $"+preco+", Quantidade: "+quantidade+
+                " SubTotal: $"+valorTotal();
+    }
+
 }

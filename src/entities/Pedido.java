@@ -3,6 +3,7 @@ package entities;
 import entities.enums.StatusPedido;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ public class Pedido {
         this.listaPedido = listaPedido;
         this.statusPedido = statusPedido;
     }
+    DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
     public void addItem(ItemPedido itemPedido){
         listaPedido.add(itemPedido);
     }
@@ -28,5 +31,12 @@ public class Pedido {
             valor += itemPedido.valorTotal();
         }
         return valor;
+    }
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Momento do Pedido "+momento.format(fmt)+"\n");
+        sb.append("Status do Pedido: "+ statusPedido+"\n");
+        return sb.toString();
     }
 }

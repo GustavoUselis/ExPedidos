@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Cliente {
     private String nome;
@@ -12,6 +13,8 @@ public class Cliente {
         this.email = email;
         this.dataNacimento = dataNacimento;
     }
+
+     DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public String getNome() {
         return nome;
@@ -32,7 +35,16 @@ public class Cliente {
     public LocalDate getDataNacimento() {
         return dataNacimento;
     }
+
     public void setDataNacimento(LocalDate dataNacimento){
         this.dataNacimento = dataNacimento;
+    }
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cliente : "+nome);
+        sb.append(" ("+dataNacimento.format(fmt)+")");
+        sb.append("- "+email);
+        return sb.toString();
     }
 }
