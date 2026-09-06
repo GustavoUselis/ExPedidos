@@ -11,11 +11,13 @@ public class Pedido {
     private LocalDateTime momento;
     private StatusPedido statusPedido;
     private List<ItemPedido> listaPedido = new ArrayList<>();
+    private Cliente cliente;
 
-    public Pedido(LocalDateTime momento, List<ItemPedido> listaPedido, StatusPedido statusPedido) {
+    public Pedido(LocalDateTime momento, List<ItemPedido> listaPedido, StatusPedido statusPedido,Cliente cliente) {
         this.momento = momento;
         this.listaPedido = listaPedido;
         this.statusPedido = statusPedido;
+        this.cliente = cliente;
     }
     DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 

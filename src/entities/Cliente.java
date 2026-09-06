@@ -36,9 +36,6 @@ public class Cliente {
         return dataNacimento;
     }
 
-    public void setDataNacimento(LocalDate dataNacimento){
-        this.dataNacimento = dataNacimento;
-    }
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

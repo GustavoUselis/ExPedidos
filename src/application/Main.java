@@ -34,7 +34,7 @@ public class Main{
         ler.nextLine();
         LocalDateTime momento = LocalDateTime.now();
         List<ItemPedido> listaP = new ArrayList<>();
-        Pedido pedido = new Pedido(momento,listaP,statusP);
+        Pedido pedido = new Pedido(momento,listaP,statusP,cliente);
         for(int i = 0; i<itens;i++){
             System.out.println("Coloque o #"+(i+1)+" item");
             System.out.print("Nome do produto : ");
